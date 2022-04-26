@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="contenedorTabla">
+    <h1 appLetra class="tituloTabla">Listado de cursos</h1>
+    <form [formGroup]="formularioEditar" (ngSubmit)="actualizar()" fxLayout="column">
+    <table #tabla mat-table [dataSource]="cursos" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let curso"> {{curso.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let curso"> {{curso.nombre}} </td>
+      </ng-container>
+      <ng-container matColumnDef="profesor">
+        <th mat-header-cell *matHeaderCellDef> Profesor </th>
+        <td mat-cell *matCellDef="let curso"> {{curso.profesor}} </td>
+      </ng-container>
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let curso"> 
+          <mat-icon (click)="delete(curso.id)">delete</mat-icon>
+          <mat-icon (click)="onEditCurso(curso.id)">cached</mat-icon>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <h1>Editar curso</h1>
+      <mat-form-field appareance="fill">
+        <mat-label>Id curso</mat-label>
+        <input type="text" formControlName="id" matInput>
+      </mat-form-field>
+      <mat-form-field appareance="fill">
+        <mat-label>Nombre curso</mat-label>
+        <input type="text" formControlName="nombre" matInput>
+      </mat-form-field>
+      <mat-form-field appareance="fill">
+        <mat-label>Profesor</mat-label>
+        <input type="text" formControlName="profesor" matInput>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="accent"><mat-icon>done_outline</mat-icon>Editar curso</button>
+    </form>
+
+</div>
+<form [formGroup]="formularioContacto" (ngSubmit)="submit()" fxLayout="column">
+  <h1>Agregar curso</h1>
+  <mat-form-field appareance="fill">
+    <mat-label>Nombre del curso</mat-label>
+    <input type="text" formControlName="nombre" matInput>
+  </mat-form-field>
+  <mat-form-field appareance="fill">
+    <mat-label>Profesor que dicta el curso</mat-label>
+    <input type="text" formControlName="profesor" matInput>
+  </mat-form-field>
+    <button type="submit" mat-raised-button color="accent"><mat-icon>done_outline</mat-icon>Agregar curso</button>
+</form>

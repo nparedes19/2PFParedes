@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { FeatureModule } from './feature/feature.module';
 import { SharedModule } from './shared/shared.module';
+import { AutenticacionModule } from './autenticacion/autenticacion.module';
 
 
 
@@ -19,7 +20,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     CoreModule,
     FeatureModule,
-    SharedModule
+    SharedModule,
+    AutenticacionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { FeatureModule } from './feature/feature.module';
 import { SharedModule } from './shared/shared.module';
 import { AutenticacionModule } from './autenticacion/autenticacion.module';
+import { AutenticacionService } from './core/services/autenticacion.service';
 
 
 
@@ -23,7 +24,7 @@ import { AutenticacionModule } from './autenticacion/autenticacion.module';
     SharedModule,
     AutenticacionModule
   ],
-  providers: [],
+  providers: [AutenticacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

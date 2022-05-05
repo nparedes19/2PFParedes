@@ -5,7 +5,7 @@
     <table #tabla mat-table [dataSource]="alumnos" class="mat-elevation-z8">
       <ng-container matColumnDef="id" class="tablaEspacio">
         <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let alumno"> {{alumno.id}} </td>
+        <td mat-cell *matCellDef="let alumno" class="alumno"> {{alumno.id}} </td>
       </ng-container>
       <ng-container matColumnDef="nombre" class="tablaEspacio">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>

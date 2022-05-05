@@ -1,7 +1,8 @@
 <mat-toolbar color="primary">
     <span>Segunda entrega</span>
     <div class="espaciador"></div>
-    <a mat-button color="accent" (click)="irAlumnos()">Alumnos</a>
-    <a mat-button color="accent" (click)="irCursos()">Cursos</a>
-    <a mat-button color="accent" (click)="irSuscribirse()">Suscribirse</a>
+    <a mat-raised-button color="accent" class="btn" (click)="irAlumnos()" *ngIf="sesionActiva.usuario.rol=='admin'">Alumnos</a>
+    <a mat-raised-button color="accent" class="btn" (click)="irCursos()" *ngIf="sesionActiva.usuario.rol=='admin'">Cursos</a>
+    <a mat-raised-button color="accent" class="btn" (click)="irSuscribirse()">Suscribirse</a>
+    <a mat-raised-button color="warn" class="btn" (click)="logout()">Cerrar sesión</a>
 </mat-toolbar>

@@ -33,4 +33,12 @@ export class AutenticacionService {
 
     localStorage.setItem("sesion", JSON.stringify(this.sesion))
   }
+
+  logout(){
+    this.sesion ={
+      activa: false,
+      usuario: {}
+    }
+    localStorage.removeItem('sesion')
+  }
 }

@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from '../autenticacion/admin.guard';
+import { AuthGuard } from '../autenticacion/auth.guard';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { CursosComponent } from './components/cursos/cursos.component';
 import { SuscribirseComponent } from './components/suscribirse/suscribirse.component';
 
 
 const routes: Routes = [
-  {path: 'cursos', component: CursosComponent},
-  {path: 'alumnos', component: AlumnosComponent},
-  {path: 'suscribirse', component: SuscribirseComponent}
+  {path: 'cursos', component: CursosComponent, canActivate: [AuthGuard, AdminGuard]},
+  {path: 'alumnos', component: AlumnosComponent, canActivate: [AuthGuard, AdminGuard]},
+  {path: 'suscribirse', component: SuscribirseComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

@@ -1,6 +1,14 @@
 <form [formGroup]="formulario" (ngSubmit)="login()">
-    <input type="text" placeholder="correo" formControlName="correo">
-    <input type="text" placeholder="contrasena" formControlName="contrasena">
-    <button type="submit">Login</button>
+    <mat-form-field>
+        <mat-label>Correo:</mat-label>
+        <input type="text" placeholder="correo" matInput formControlName="correo">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Contraseña:</mat-label>
+        <input type="password" placeholder="contrasena" matInput formControlName="contrasena">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="accent" type="submit">Login</button>
 </form>
 

@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
       }else{
         console.log('Error de autenticación', data)
         this.auth.establecerSesion(false, data[0])
+        alert("Error de autenticación")
       }
     })
   }
